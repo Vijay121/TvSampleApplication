@@ -2,9 +2,25 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_home"
-    app:startDestination="@id/hostfragment">
+    app:startDestination="@id/browseVideosfragment">
     <fragment
         android:id="@+id/hostfragment"
         android:name="com.myexample.mvvmproject.fragments.HostFragment"
         android:label="HostFragment" />
+    <fragment
+        android:id="@+id/browseVideosfragment"
+        android:name="com.myexample.mvvmproject.fragments.HomeFragment"
+        android:label="HomeFragment">
+
+        <argument
+            android:name="channel_id"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_browseVideosfragment_to_hostfragment"
+            app:destination="@id/hostfragment" />
+    </fragment>
+
+
 </navigation>
